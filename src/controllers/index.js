@@ -1,2 +1,2 @@
 module.exports.Account = require('./Account.js');
-module.exports.Domo = require('./Bird.js');
+module.exports.Bird = require('./Bird.js');
