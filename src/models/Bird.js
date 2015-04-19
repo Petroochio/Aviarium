@@ -7,6 +7,18 @@ var setName = function(name) {
     return _.escape(name).trim();
 };
 
+var setBeak = function(beak) {
+    return _.escape(beak).trim();
+};
+
+var setWing = function(wing) {
+    return _.escape(wing).trim();
+};
+
+var setBody = function(body) {
+    return _.escape(body).trim();
+};
+
 var BirdSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -15,6 +27,27 @@ var BirdSchema = new mongoose.Schema({
         set: setName
     },
     
+    body: {
+        type: String,
+        required: true,
+        trim: true,
+        set: setBody
+    },
+
+    wing: {
+        type: String,
+        required: true,
+        trim: true,
+        set: setWing
+    },
+
+    beak: {
+        type: String,
+        required: true,
+        trim: true,
+        set: setBeak
+    },
+
     owner: 	{
 		type: mongoose.Schema.ObjectId,
 		required: true,
