@@ -1,0 +1,22 @@
+extends ./base.jade
+block append style
+    link(rel="stylesheet", type="text/css", href="/assets/style.css")
+block body
+  nav
+    a(href="/login")
+      img#logo(src="/assets/img/face.png", alt="face logo")
+    .navlink
+      a(href="/logout") Log out
+  section#makebird
+    form#birdForm(class="birdForm", name="birdForm", action="/maker", method="POST")
+      label(for="name") Name: 
+      input#birdName(type="text", name="name", placeholder="bird Name")
+      canvas#birdView(width='200px', height='200px')
+      a#makebirdSubmit(class="makebirdSubmit", href="#") Make bird
+  #birdMessage
+    img#speech(src="/assets/img/speech.png", alt="speech box")
+    h3
+      span#errorMessage
+    img#bird(src="assets/img/bird.png", alt="bird")
+block scripts
+        script(src="/assets/maker.js")
