@@ -36,10 +36,21 @@ $(document).ready(function() {
             handleError("RAWR! All fields are required");
             return false;
         }
-
-        //sendAjax($("#birdForm").attr("action"), $("#birdForm").serialize());
+        var birdObj = {};
+        birdObj.name = $("#birdName").val();
+        birdObj.wing = $("#wing").val();
+        birdObj.beak = $("#beak").val();
+        birdObj.body = $("#body").val();
+        console.log(birdObj);
+        sendAjax($("#birdForm").attr("action"), birdObj);
         
         return false;
     });
+
+    var canvas = document.querySelector('#birdView');
+    var ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(0,0, canvas.width, canvas.height);
     
 });
