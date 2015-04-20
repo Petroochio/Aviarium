@@ -2,11 +2,6 @@ extends ./base.jade
 block append style
     link(rel="stylesheet", type="text/css", href="/assets/style.css")
 block body
-  nav
-    a(href="/login")
-      img#logo(src="/assets/img/face.png", alt="face logo")
-    .navlink
-      a(href="/logout") Log out
   section#makebird
     form#birdForm(class="birdForm", name="birdForm", action="/maker", method="POST")
       label(for="name") Name: 

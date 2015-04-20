@@ -42,6 +42,7 @@ $(document).ready(function() {
         birdObj.beak = $("#beak").val();
         birdObj.body = $("#body").val();
         console.log(birdObj);
+        
         sendAjax($("#birdForm").attr("action"), birdObj);
         
         return false;

@@ -1,11 +1,70 @@
-html, body {
-    height: 100%;
-    width: 100%;
+body {
     margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    padding-left:17%;
+    padding-right:17%;
+    padding-top:10%;
+    background-color: #F5FFFF;
+    overflow-y: hidden;
 }
-
+#container{
+    border-style: solid;
+    border-width: 2px;
+    border-color: #141A1A;
+    height: 110%;
+    width: 100%;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    padding: 0;
+}
+#binding{
+    margin: 0;
+    width: 8%;
+    height: 100%;
+    -webkit-border-radius: 15px 0px 0px 0px;
+    -moz-border-radius: 15px 0px 0px 0px;
+    border-radius: 15px 0px 0px 0px;
+    background-color: #141A1A;
+    float: left;
+}
+#cover{
+    margin: 0;
+    background-color: #99B;
+    float: left;
+    height: 100%;
+    width: 92%;
+    -webkit-border-radius: 0px 18px 0px 0px;
+    -moz-border-radius: 0px 18px 0px 0px;
+    border-radius: 0px 18px 0px 0px;
+}
+#cover-label{
+    background-color: #F5FFFF;
+    height: 30%;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 20%;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    -moz-border-radius: 30px 30px 30px 30px;
+    border-radius: 30px 30px 30px 30px;
+    border-color: #141A1A;
+    border-width: 2px;
+    border-style: solid;
+}
+#cover-title{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 120%;
+}
+hr {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #141A1A;
+    height: 2px;
+    border: 0;
+}
+/*
 #logo {
     height: 40px;
     width: 40;
@@ -264,4 +323,4 @@ h3.domoAge {
 
 .domo:last-child {
     margin-bottom:10px;
-}
+}*/

@@ -3,8 +3,8 @@
 $(document).ready(function() {
 
     function handleError(message) {
-        $("#errorMessage").text(message);
-        $("#domoMessage").animate({width:'toggle'},350);
+        //$("#errorMessage").text(message);
+        //$("#domoMessage").animate({width:'toggle'},350);
     }
     
     function sendAjax(action, data) {
@@ -15,14 +15,14 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(result, status, xhr) {
-                $("#domoMessage").animate({width:'hide'},350);
+                //$("#domoMessage").animate({width:'hide'},350);
 
                 window.location = result.redirect;
             },
             error: function(xhr, status, error) {
                 var messageObj = JSON.parse(xhr.responseText);
             
-                handleError(messageObj.error);
+                //handleError(messageObj.error);
             }
         });        
     }
@@ -30,7 +30,7 @@ $(document).ready(function() {
     $("#signupSubmit").on("click", function(e) {
         e.preventDefault();
     
-        $("#domoMessage").animate({width:'hide'},350);
+        //$("#domoMessage").animate({width:'hide'},350);
     
         if($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
             handleError("RAWR! All fields are required");
@@ -50,7 +50,7 @@ $(document).ready(function() {
     $("#loginSubmit").on("click", function(e) {
         e.preventDefault();
     
-        $("#domoMessage").animate({width:'hide'},350);
+        //$("#domoMessage").animate({width:'hide'},350);
     
         if($("#user").val() == '' || $("#pass").val() == '') {
             handleError("RAWR! Username or password is empty");
