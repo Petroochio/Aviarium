@@ -24,6 +24,9 @@ var makeBird = function(req, res) {
     
     var birdData = {
         name: req.body.name,
+        wing: req.body.wing,
+        body: req.body.body,
+        beak: req.body.beak,
         owner: req.session.account._id
     };
     
