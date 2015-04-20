@@ -63,7 +63,10 @@ var BirdSchema = new mongoose.Schema({
 
 BirdSchema.methods.toAPI = function() {
     return {
-        name: this.name
+        name: this.name,
+        body: this.body,
+        wing: this.wing,
+        beak: this.beak
     };
 };
 
