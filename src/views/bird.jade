@@ -7,6 +7,7 @@ block body
   div#container
     div#binding &nbsp;
     div#page &nbsp;
+      a#logOut(href="/logout") Log out
       form#birdForm(class="birdForm", name="birdForm", action="/maker", method="POST")
         label(for="name") Name: 
         input#birdName(type="text", name="name", placeholder="bird Name")
