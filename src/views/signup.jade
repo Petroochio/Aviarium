@@ -8,7 +8,7 @@ block body
       section#cover-label &nbsp;
         section#cover-title Aviarium 
         hr
-        form#signupForm
+        form#signupForm(name="signupForm", action="/signup", method="POST")
           label(for="username") Name: 
           input#user(type="text", name="username", placeholder="username")
           br

@@ -3,8 +3,10 @@ block append style
     link(rel="stylesheet", type="text/css", href="/assets/style.css")
 block body
   div#container
-    section#binding &nbsp;
-    section#page &nbsp;
-      
+    div#binding &nbsp;
+    div#page &nbsp;
+      a#logOut(href="/logout") Log out
+      div#birdList
+        a#newBird(href="/maker") &nbsp;New
 block scripts
-        script(src="/assets/client.js")
+        script(src="/assets/catalogue.js")
