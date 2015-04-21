@@ -48,7 +48,7 @@ $(document).ready(function() {
         return false;
     });
 
-    var canvas = document.querySelector('#birdView');
+    var canvas = document.querySelector('.birdCanvas');
     var ctx = canvas.getContext('2d');
 
     ctx.fillStyle = 'blue';
