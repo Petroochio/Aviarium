@@ -21,7 +21,7 @@ $(document).ready(function() {
             },
             error: function(xhr, status, error) {
                 var messageObj = JSON.parse(xhr.responseText);
-            
+                console.log(messageObj.error);
                 //handleError(messageObj.error);
             }
         });        
@@ -31,19 +31,19 @@ $(document).ready(function() {
         e.preventDefault();
     
         //$("#domoMessage").animate({width:'hide'},350);
-    
-        if($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
+     /*|| $("#pass2").val() == ''*/
+        if($("#user").val() == '' || $("#pass").val() == '') {
             handleError("RAWR! All fields are required");
             return false;
         }
         
-        if($("#pass").val() !== $("#pass2").val()) {
+        /*if($("#pass").val() !== $("#pass2").val()) {
             handleError("RAWR! Passwords do not match");
             return false;           
-        }
+        }*/
 
         sendAjax($("#signupForm").attr("action"), $("#signupForm").serialize());
-        
+
         return false;
     });
 

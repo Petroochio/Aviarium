@@ -38,13 +38,13 @@ var login = function(req, res) {
 
 var signup = function(req, res) {
 
-    if(!req.body.username || !req.body.pass || !req.body.pass2) {
+    if(!req.body.username || !req.body.pass /*|| !req.body.pass2*/) {
         return res.status(400).json({error: "RAWR! All fields are required"});
     }
 
-    if(req.body.pass !== req.body.pass2) {
+    /*if(req.body.pass !== req.body.pass2) {
         return res.status(400).json({error: "RAWR! Passwords do not match"});
-    }
+    }*/
 	
 	Account.AccountModel.generateHash(req.body.pass, function(salt, hash) {
 
@@ -64,7 +64,7 @@ var signup = function(req, res) {
 
             req.session.account = newAccount.toAPI();
             
-			res.json({redirect: '/maker'});
+			res.json({redirect: '/catalogue'});
 		});
 	});
 };

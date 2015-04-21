@@ -4,6 +4,7 @@ body {
     padding-right:17%;
     padding-top:10%;
     background-color: #F5FFFF;
+    font-family: 'Source Sans Pro', sans-serif;
     overflow-y: hidden;
 }
 #container{
@@ -39,10 +40,10 @@ body {
 }
 #cover-label{
     background-color: #F5FFFF;
-    height: 30%;
     width: 40%;
     margin: 0 auto;
     margin-top: 20%;
+    padding-bottom: 3%;
     -webkit-border-radius: 30px 30px 30px 30px;
     -moz-border-radius: 30px 30px 30px 30px;
     border-radius: 30px 30px 30px 30px;
@@ -54,7 +55,6 @@ body {
     width: 90%;
     margin: 0 auto;
     text-align: center;
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 120%;
 }
 hr {
@@ -63,6 +63,35 @@ hr {
     background-color: #141A1A;
     height: 2px;
     border: 0;
+}
+#loginForm, #signupForm {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 1em;
+}
+label{
+    margin-top: 1em;
+}
+#links{
+    padding-top: 1em;
+    width: 90%;
+    margin: 0 auto;
+}
+.formSubmit, #signUp{
+    margin-left: 1em;
+    padding: .2em .2em .2em .2em;
+    text-decoration: none;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    -moz-border-radius: 30px 30px 30px 30px;
+    border-radius: 30px 30px 30px 30px;
+    border-color: #141A1A;
+    border-width: 1px;
+    border-style: solid;
+    color: #141A1A;
+}
+.formSubmit:hover, #signUp:hover{
+    background-color: #141A1A;
+    color: #F5FFFF;
 }
 /*
 #logo {
