@@ -2,7 +2,7 @@ extends ./base.jade
 block append style
     link(rel="stylesheet", type="text/css", href="/assets/style.css")
 block body
-  section#birdView
+  div#birdView &nbsp;
     canvas.birdCanvas(width='200px', height='200px')
   div#container
     div#binding &nbsp;
@@ -11,15 +11,19 @@ block body
       form#birdForm(class="birdForm", name="birdForm", action="/maker", method="POST")
         label(for="name") Name: 
         input#birdName(type="text", name="name", placeholder="bird Name")
+        br
         label(for="wing") Wing: 
         select#wing
           option Default
+        br
         label(for="beak") Beak: 
         select#beak
           option Default
+        br
         label(for="body") Body: 
         select#body
           option Default
+        br
         a#makeBirdSubmit(class="makebirdSubmit", href="#") Make bird
 block scripts
         script(src="/assets/maker.js")
