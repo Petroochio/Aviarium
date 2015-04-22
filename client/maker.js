@@ -16,7 +16,6 @@ $(document).ready(function() {
             dataType: "json",
             success: function(result, status, xhr) {
                 //$("#birdMessage").animate({width:'hide'},350);
-
                 window.location = result.redirect;
             },
             error: function(xhr, status, error) {
@@ -41,16 +40,15 @@ $(document).ready(function() {
         birdObj.wing = $("#wing").val();
         birdObj.beak = $("#beak").val();
         birdObj.body = $("#body").val();
-        console.log(birdObj);
         
         sendAjax($("#birdForm").attr("action"), birdObj);
         
         return false;
     });
-
+    //Get a reference to the canvas
     var canvas = document.querySelector('.birdCanvas');
     var ctx = canvas.getContext('2d');
-
+    //size the canvas to match the screen
     var resizeCanvas = function() {
         var canvasHolder = document.querySelector('#birdView');
 
@@ -62,6 +60,24 @@ $(document).ready(function() {
     };
 
     $(window).resize( resizeCanvas );
-    
+    //Draw function for rendering the bird
+    var renderBird = function(){
+        //get values
+        var birdObj = {};
+        birdObj.wing = $("#wing").val();
+        birdObj.beak = $("#beak").val();
+        birdObj.body = $("#body").val();
+
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        birdDraw.render(canvas, ctx, birdObj);
+    }
+
+    //Draw the bird
+    renderBird();
+    //When the bird values change redraw
+    $("#wing").on('change', renderBird);
+    $("#beak").on('change', renderBird);
+    $("#body").on('change', renderBird);
+
     resizeCanvas();
 });

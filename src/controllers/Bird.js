@@ -30,7 +30,7 @@ var makerPage = function(req, res) {
 
 var makeBird = function(req, res) {
 
-    if(!req.body.name || !req.body.age) {
+    if(!req.body.name ) {
         return res.status(400).json({error: "Form Incomplete"});
     }
     
