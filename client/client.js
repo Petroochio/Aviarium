@@ -3,8 +3,7 @@
 $(document).ready(function() {
 
     function handleError(message) {
-        //$("#errorMessage").text(message);
-        //$("#domoMessage").animate({width:'toggle'},350);
+        
     }
     
     function sendAjax(action, data) {
@@ -30,17 +29,15 @@ $(document).ready(function() {
     $("#signupSubmit").on("click", function(e) {
         e.preventDefault();
     
-        //$("#domoMessage").animate({width:'hide'},350);
-     /*|| $("#pass2").val() == ''*/
-        if($("#user").val() == '' || $("#pass").val() == '') {
+        if($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
             handleError("RAWR! All fields are required");
             return false;
         }
         
-        /*if($("#pass").val() !== $("#pass2").val()) {
+        if($("#pass").val() !== $("#pass2").val()) {
             handleError("RAWR! Passwords do not match");
             return false;           
-        }*/
+        }
 
         sendAjax($("#signupForm").attr("action"), $("#signupForm").serialize());
 

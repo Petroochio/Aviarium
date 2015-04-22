@@ -15,7 +15,7 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(result, status, xhr) {
-                $("#birdMessage").animate({width:'hide'},350);
+                //$("#birdMessage").animate({width:'hide'},350);
 
                 window.location = result.redirect;
             },
@@ -51,7 +51,17 @@ $(document).ready(function() {
     var canvas = document.querySelector('.birdCanvas');
     var ctx = canvas.getContext('2d');
 
-    ctx.fillStyle = 'blue';
-    ctx.fillRect(0,0, canvas.width, canvas.height);
+    var resizeCanvas = function() {
+        var canvasHolder = document.querySelector('#birdView');
+
+        canvas.height = canvasHolder.offsetHeight;
+        canvas.width = canvasHolder.offsetWidth;
+
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(0,0, canvas.width, canvas.height);
+    };
+
+    $(window).resize( resizeCanvas );
     
+    resizeCanvas();
 });
