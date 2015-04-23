@@ -54,9 +54,6 @@ $(document).ready(function() {
 
         canvas.height = canvasHolder.offsetHeight;
         canvas.width = canvasHolder.offsetWidth;
-
-        ctx.fillStyle = 'blue';
-        ctx.fillRect(0,0, canvas.width, canvas.height);
     };
 
     $(window).resize( resizeCanvas );
@@ -71,13 +68,12 @@ $(document).ready(function() {
         ctx.clearRect(0,0,canvas.width,canvas.height);
         birdDraw.render(canvas, ctx, birdObj);
     }
-
+    //size the canvas properly
+    resizeCanvas();
     //Draw the bird
     renderBird();
     //When the bird values change redraw
     $("#wing").on('change', renderBird);
     $("#beak").on('change', renderBird);
     $("#body").on('change', renderBird);
-
-    resizeCanvas();
 });
