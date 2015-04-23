@@ -54,8 +54,7 @@ app.use(session({
     saveUninitialized: true
 }));    
 app.set('view engine', 'jade'); 
-app.set('views', __dirname + '/views'); 
-app.use(favicon(__dirname + '/../client/img/favicon.png')); 
+app.set('views', __dirname + '/views');
 app.use(cookieParser()); 
 
 router(app); 
