@@ -153,9 +153,11 @@ label{
     height: 70%;
     margin-top: 9%;
     margin-left: 11%;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: none;
 }
 .birdBox, #newBird{
+    position: relative;
     width: 20%;
     height: 20%;
     margin-right: 1em;
@@ -169,6 +171,19 @@ label{
     border-style: solid;
     float:left;
 }
-.birdBox:hover, #newBird:hover{
+#newBird:hover{
     background-color: rgba(91,91,91, .2);
+}
+h3 {
+    text-align: right;
+    padding-right: 1em;
+    padding-top: 30%;
+}
+.tinyCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#errorMessage{
+    color: red;
 }

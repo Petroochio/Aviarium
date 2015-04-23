@@ -76,7 +76,7 @@ BirdSchema.statics.findByOwner = function(ownerId, callback) {
         owner: mongoose.Types.ObjectId(ownerId)
     };
 
-    return BirdModel.find(search).select("name age").exec(callback);
+    return BirdModel.find(search).select("name body wing beak").exec(callback);
 };
 
 

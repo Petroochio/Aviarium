@@ -15,7 +15,7 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(result, status, xhr) {
-                //$("#birdMessage").animate({width:'hide'},350);
+                $("#birdMessage").animate({width:'hide'},350);
                 window.location = result.redirect;
             },
             error: function(xhr, status, error) {
@@ -31,8 +31,8 @@ $(document).ready(function() {
     
         $("#birdMessage").animate({width:'hide'},350);
     
-        if($("#birdName").val() == '' || $("#birdAge").val() == '') {
-            handleError("RAWR! All fields are required");
+        if($("#birdName").val() == '') {
+            handleError("Bird Must Have Name");
             return false;
         }
         var birdObj = {};

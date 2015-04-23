@@ -10,12 +10,15 @@ block body
       a#logOut(href="/logout") Log out
       form#birdForm(class="birdForm", name="birdForm", action="/maker", method="POST")
         label(for="name") Name: 
+          span#birdMessage 
+          span#errorMessage 
         input#birdName(type="text", name="name", placeholder="bird Name")
         br
         label(for="wing") Wing: 
         select#wing
           option Default
           option Angular
+          option Crecent
         br
         label(for="beak") Beak: 
         select#beak
@@ -26,6 +29,7 @@ block body
         label(for="body") Tail: 
         select#body
           option Default
+          option Angular
         br
         a#makeBirdSubmit(class="makebirdSubmit", href="#") Make bird
 block scripts

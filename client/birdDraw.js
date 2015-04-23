@@ -12,8 +12,14 @@ var birdDraw = {
     ctx.lineWidth = canvas.height/150;
 
     switch(type) {
-      case "Blade":
-        
+      case "Crecent":
+        ctx.beginPath();
+        ctx.arc(x - y/7, y + y/3.8, r*.9, 0, Math.PI, false);
+        ctx.lineTo(x - y/7, y + y/3.8)
+        ctx.stroke();
+        ctx.fill();
+        ctx.closePath();
+        ctx.restore();
         break;
       case "Angular":
         ctx.beginPath();
@@ -118,10 +124,63 @@ var birdDraw = {
     ctx.closePath();
     ctx.restore();
 
+    switch(type) {
+      case "Angular":
+        ctx.beginPath();
+        ctx.moveTo(x - y*.4,y + y/2);
+        ctx.lineTo(x -y,y + y*.4);
+        ctx.lineTo(x -y*.45,y + y*.35);
+        ctx.stroke();
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.moveTo(x - y*.35,y + y*.55);
+        ctx.lineTo(x -y*.8,y + y*.45);
+        ctx.lineTo(x -y*.45,y + y*.4);
+        ctx.stroke();
+        ctx.fill();
+        ctx.closePath();
+        break;
+      default:
+        ctx.save();
+        ctx.translate(x - y*.7,y + y/2.4);
+        ctx.scale(1.8,.9);
+        ctx.beginPath();
+        ctx.arc(0, 0, r*.5, Math.PI/6, Math.PI*2 - Math.PI/6, false);
+        ctx.stroke();
+        ctx.fill();
+        ctx.closePath();
+        ctx.restore();
+
+        ctx.save();
+        ctx.translate(x - y*.7,y + y/2.7);
+        ctx.scale(2.1,.9);
+        ctx.beginPath();
+        ctx.arc(0, 0, r*.5, Math.PI/6, Math.PI*2 - Math.PI/6, false);
+        ctx.stroke();
+        ctx.fill();
+        ctx.closePath();
+        ctx.restore();
+
+        ctx.save();
+        ctx.translate(x - y*.65,y + y/2.4);
+        ctx.scale(1.9,1);
+        ctx.beginPath();
+        ctx.arc(0, 0, r*.5, Math.PI/6, Math.PI*2 - Math.PI/6, false);
+        ctx.stroke();
+        ctx.fill();
+        ctx.closePath();
+        ctx.restore();
+        
+        break;
+    }
+
     ctx.restore();
   },
 
   render: function(canvas, ctx, values){
+    console.log(values.body);
     this.body(canvas, ctx, values.body);
     this.wing(canvas, ctx, values.wing);
     this.beak(canvas, ctx, values.beak);
